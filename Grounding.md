@@ -1,6 +1,6 @@
 ## Grounding in Agentforce
 
-### RAG is a grounding technique where relevant information is retrieved from a knowledge source and added to the prompt before sending it to the LLM, resulting in more accurate and context-aware responses.
+### RAG (Retrieval Augmented Generation) is a technique where an AI first retrieves relevant information from knowledge sources and then uses that information to generate a response.
 
 ### What is Grounding?
 
@@ -113,3 +113,62 @@ Standard Agentforce action used to:
 * Retrievers fetch relevant information from search indexes.
 * Chunking and vectorization prepare data for semantic search.
 * RAG helps Agentforce deliver more accurate and context-aware responses.
+
+
+### Search Types in RAG
+
+#### Keyword Search
+
+Finds results based on exact keyword matches.
+
+**Example**
+
+* Document: "Customer can reset password through the self-service portal."
+* Query: "reset password" ✅
+* Query: "change login credentials" ❌
+
+**Best For:** IDs, product names, exact terms, codes.
+
+---
+
+#### Vector Search (Semantic Search)
+
+Finds results based on meaning and intent rather than exact words.
+
+**Example**
+
+* Document: "Customer can reset password through the self-service portal."
+* Query: "change login credentials" ✅
+* Query: "recover account access" ✅
+
+**Best For:** Natural language questions, knowledge articles, FAQs.
+
+---
+
+#### Hybrid Search
+
+Combines Keyword Search and Vector Search.
+
+**Example**
+
+* Document: "Customer can reset password through the self-service portal."
+* Query: "portal password change" ✅
+
+Uses:
+
+* Keyword Match: "portal"
+* Semantic Match: "password change" ≈ "reset password"
+
+**Best For:** Most Agentforce and RAG use cases.
+
+---
+
+### Key Takeaways
+
+| Search Type    | Matches               | Best For                   |
+| -------------- | --------------------- | -------------------------- |
+| Keyword Search | Exact words           | IDs, codes, specific terms |
+| Vector Search  | Meaning and intent    | Natural language queries   |
+| Hybrid Search  | Exact words + meaning | Most RAG implementations   |
+
+**Recommendation:** Hybrid Search is generally preferred because it combines the precision of keyword search with the intelligence of semantic search.
