@@ -50,3 +50,64 @@ User Query → Retrieve Relevant Data → Enrich Prompt → Generate Response
 * RAG enhances responses using relevant information from knowledge sources.
 * Grounding improves accuracy, relevance, and reliability of Agentforce responses.
 
+## Retrieval Augmented Generation (RAG)
+
+### What is RAG?
+
+Retrieval Augmented Generation (RAG) is a grounding technique that improves LLM responses by retrieving relevant business knowledge and adding it to the prompt before generating a response.
+
+### How RAG Works
+
+1. Retrieve relevant information from a knowledge source.
+2. Augment the original prompt with the retrieved information.
+3. Generate a response using the enriched prompt.
+
+**Flow:**
+User Query → Retrieve Knowledge → Augment Prompt → LLM Response
+
+### Benefits
+
+* Improves accuracy and relevance.
+* Reduces hallucinations.
+* Uses up-to-date business knowledge.
+* Supports both structured and unstructured data sources.
+
+### Agentforce Data Library
+
+A Data Library is a collection of content used by agents to answer questions.
+
+Supported sources:
+
+* Salesforce Knowledge Articles
+* Uploaded Files (PDF, HTML, Text)
+* Web Search
+
+### Answer Questions with Knowledge Action
+
+Standard Agentforce action used to:
+
+* Search the Data Library
+* Retrieve relevant content
+* Ground the prompt
+* Return a more accurate response
+
+### RAG Components
+
+* **Retriever** – Finds relevant information.
+* **Search Index** – Stores searchable content.
+* **Chunking** – Breaks content into smaller pieces.
+* **Vectorization** – Converts text into numerical vectors for semantic search.
+* **Prompt Template** – Combines retrieved content with the user query.
+
+### Search Types
+
+* **Vector Search** – Finds content based on meaning (semantic similarity).
+* **Hybrid Search** – Combines vector search and keyword search.
+
+### Key Takeaways
+
+* RAG = Retrieve + Augment + Generate.
+* Data Libraries provide business knowledge for agents.
+* Retrievers fetch relevant information from search indexes.
+* Chunking and vectorization prepare data for semantic search.
+* RAG helps Agentforce deliver more accurate and context-aware responses.
