@@ -1,5 +1,7 @@
 ## Grounding in Agentforce
 
+### RAG is a grounding technique where relevant information is retrieved from a knowledge source and added to the prompt before sending it to the LLM, resulting in more accurate and context-aware responses.
+
 ### What is Grounding?
 
 Grounding is the process of providing an LLM with relevant business data before generating a response. This improves accuracy, relevance, and trustworthiness.
