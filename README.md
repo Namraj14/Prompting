@@ -64,3 +64,13 @@
 * Agents cannot pause a flow to ask users questions mid-execution.
 * If flow input/output variables change, recreate the Agent Action to refresh the variable mappings.
 
+### Error Handling Best Practice
+
+* Add **Fault Paths** to flow elements that can fail (Get Records, Update Records, Create Records, etc.).
+* Connect the fault path to an **Assignment** element.
+* Create a **Text Output Variable** (for example, `Error_Message`) and mark it as **Available for Output**.
+* In the Assignment element, set:
+
+  * `Error_Message = "Unable to complete the requested action. Please try again later."`
+  * Or assign the system fault message if appropriate.
+* Return the output variable to the agent so it can provide a meaningful error response instead of a generic failure message.
