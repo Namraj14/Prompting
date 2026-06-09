@@ -172,3 +172,96 @@ Uses:
 | Hybrid Search  | Exact words + meaning | Most RAG implementations   |
 
 **Recommendation:** Hybrid Search is generally preferred because it combines the precision of keyword search with the intelligence of semantic search.
+
+
+## Retrieval Augmented Generation (RAG)
+
+### What is RAG?
+
+RAG is a grounding technique that enhances LLM responses by retrieving relevant information from external knowledge sources and adding it to the prompt before generating a response.
+
+### RAG Workflow
+
+1. Retrieve relevant information from a knowledge source.
+2. Augment the original prompt with the retrieved content.
+3. Generate a response using the enriched prompt.
+
+**Flow:** User Query → Retrieve → Augment → Generate
+
+### Benefits
+
+* Improves response accuracy and relevance.
+* Reduces hallucinations.
+* Uses up-to-date business knowledge.
+* Supports both structured and unstructured data.
+
+### Agentforce Data Library
+
+A Data Library is a collection of content used by agents for retrieval.
+
+Supported Sources:
+
+* Salesforce Knowledge Articles
+* Uploaded Files (PDF, Text, HTML)
+* Web Search
+
+### Answer Questions with Knowledge
+
+Standard Agentforce action that:
+
+* Searches the Data Library
+* Retrieves relevant content
+* Grounds the prompt
+* Returns an accurate response
+
+### Core RAG Components
+
+#### Retriever
+
+Fetches relevant information from the knowledge source.
+
+#### Search Index
+
+Stores searchable and optimized content.
+
+#### Chunking
+
+Breaks large documents into smaller sections for retrieval.
+
+#### Vectorization
+
+Converts text into numerical vectors for semantic search.
+
+### Search Types
+
+#### Keyword Search
+
+* Matches exact words.
+* Best for IDs, product names, and specific terms.
+
+#### Vector Search
+
+* Matches meaning and intent.
+* Best for natural language queries.
+
+#### Hybrid Search
+
+* Combines keyword and vector search.
+* Provides more accurate retrieval results.
+
+### Data Preparation Process
+
+1. Ingest Data
+2. Chunk Content
+3. Vectorize Content
+4. Create/Search Index
+5. Retrieve Relevant Information
+
+### Key Takeaways
+
+* RAG = Retrieve + Augment + Generate.
+* Data Libraries provide business knowledge for agents.
+* Retrievers fetch relevant content from search indexes.
+* Chunking and vectorization enable semantic search.
+* Hybrid Search combines exact matching and semantic matching.
+* RAG helps Agentforce deliver accurate, context-aware, and up-to-date responses.
