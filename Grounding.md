@@ -265,3 +265,79 @@ Converts text into numerical vectors for semantic search.
 * Chunking and vectorization enable semantic search.
 * Hybrid Search combines exact matching and semantic matching.
 * RAG helps Agentforce deliver accurate, context-aware, and up-to-date responses.
+
+
+### Search Index
+
+A Search Index is an optimized repository that stores chunked and vectorized content, enabling fast and accurate retrieval for RAG applications.
+
+### Without a Search Index
+
+When a user asks:
+
+> "How do I reset my password?"
+
+The system would need to scan every document, PDF, email, or knowledge article individually to find the answer.
+
+**Problems:**
+
+* Slow performance
+* Higher processing cost
+* Poor scalability
+* Less accurate retrieval
+
+### With a Search Index
+
+Before runtime:
+
+1. Ingest content
+2. Chunk documents into smaller sections
+3. Vectorize the chunks
+4. Store them in a Search Index
+
+At runtime:
+
+User Query → Search Index → Retriever → Relevant Content → LLM Response
+
+**Benefits:**
+
+* Fast retrieval
+* Better relevance
+* Supports semantic search
+* Scales to large knowledge repositories
+
+### Example
+
+Knowledge Base contains:
+
+* Password Reset Guide
+* Account Management Guide
+* Billing FAQ
+* Product Documentation
+
+**User Query:**
+
+> "I forgot my password and can't log in."
+
+Without Search Index:
+
+* System scans all documents manually.
+
+With Search Index:
+
+* Retriever instantly finds the Password Reset Guide and sends the relevant content to the LLM.
+
+### What a Search Index Stores
+
+* Content Chunks
+* Metadata
+* Keywords
+* Vector Embeddings
+
+### Key Takeaways
+
+* Search Index is the foundation of RAG retrieval.
+* Stores chunked and vectorized content.
+* Enables fast and relevant information retrieval.
+* Used by Retrievers to ground LLM responses.
+* Supports Vector Search and Hybrid Search.
